@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Files</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="part1">
+        <p class="heading"><span><i class="fa-regular fa-file-lines"></i></span>  ChatDocs</p>
+        <ul class="usermanual">
+            <li>📁 <strong>Upload Files:</strong> Click "Submit & Process" to upload PDFs, PPTs, or DOCXs. 📄</li><br>
+            <li>🔍 <strong>Summarize:</strong> Click "Summarize" to view the document summary in the chatbox. 📝</li><br>
+            <li>❓ <strong>Ask Questions:</strong> Type your question and click "Ask" for answers in the chatbox. 💬</li><br>
+            <li>🔄 <strong>Refresh Page:</strong> Refresh to start over or upload new files. 🔄</li><br>
+            <li>📖 <strong>Read Responses:</strong> Summaries and answers appear in the left chatbox. 📚</li><br>
+            <li>💡 <strong>Need Help?</strong> Contact support if you need assistance. 🤝</li><br>
+        </ul>
+    </div>
+    <div class="part2">
+        <div class="chat-box">
+            <div class="chat-message bot-message">
+                <p>Welcome! Upload files and ask questions.</p>
+            </div>
+        </div>
+        <form id="uploadForm" onsubmit="event.preventDefault(); uploadFiles();">
+            <input type="file" class="uploading" name="files" multiple>
+            <button type="button" onclick="uploadFiles()">Submit & Process</button><br>
+            <button type="button" onclick="summarizeFiles()">Summarize</button>
+        </form>
+        <div class="response">
+            <p id="fileUploadMessage"></p>
+            <!-- <pre id="summaryText"></pre> -->
+        </div>
+        <form id="questionForm">
+            <input type="text" class="question" id="question" name="question" placeholder="Ask a question from the files">
+            <button type="button" onclick="askQuestion()">Ask</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
